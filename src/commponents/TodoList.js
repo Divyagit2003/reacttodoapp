@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
+import './style.css'; 
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -17,9 +18,10 @@ export default function TodoList() {
 
   return (
     <div className="todo-container">
-      <h1 className="title">My Todo List</h1>
+      <h1 className="title"id="titleId">TODO LIST</h1>
       <form className="todo-form" onSubmit={(e) => e.preventDefault()}>
         <input
+        id="inputId"
           type="text"
           value={inputValue}
           placeholder="Add a new task"
