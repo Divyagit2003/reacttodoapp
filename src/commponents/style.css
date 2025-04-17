@@ -1,64 +1,130 @@
-body{
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    height: 100vh;
-    
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* Container */
 .todo-container {
-    width: 300px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
 
-  }
-  
+/* Title */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form */
+.todo-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: #7e57c2;
+}
+
+/* Add/Update Button */
+.add-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #7e57c2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #5e35b1;
+}
+
+/* Todo List Items */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.todo-list > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fafafa;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+/* Text of each todo */
+.todo-list span {
+  font-size: 1rem;
+  color: #333;
+  flex: 1;
+}
+
+/* Buttons in each todo item */
+.todo-list button {
+  margin-left: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Delete Button */
+.todo-list button:first-of-type {
+  background-color: #ef5350;
+  color: white;
+}
+
+.todo-list button:first-of-type:hover {
+  background-color: #c62828;
+}
+
+/* Edit Button */
+.todo-list button:last-of-type {
+  background-color: #42a5f5;
+  color: white;
+}
+
+.todo-list button:last-of-type:hover {
+  background-color: #1e88e5;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
   .todo-form {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .todo-list {
-    margin-top: 20px;
+    flex-direction: column;
   }
 
-
-  .todo-input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
   .add-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
+    width: 100%;
   }
-  
-  .add-button:hover {
-    background-color: #218838;
-  }
-
-  .todo-list div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  button {
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-
-  }
-  
-  button:hover {
-    background-color: darkred;
-  }
+}
